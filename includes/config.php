@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 * Arquivo de Configuração dos titulos
 */
