@@ -1,30 +1,28 @@
 <?php
 $url = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 $getUrl = trim($url['path'], '/');
-echo $getUrl. "<br/>";
+//echo $getUrl. "<br/>";
 // --------
 date_default_timezone_set('America/Sao_Paulo');
 require_once ('includes/config.php');
 require_once ('includes/bd.php');
 // --------
 // Consulta
-    if (isset($getUrl) != " ") {
+    if ($getUrl != "") {
         $rota = $getUrl;
     } else {
         $rota = 'home';
     }
-    echo $rota;
+    //echo $rota. "<br/>";
+    // seleciona as páginas com base na url passada
     $query = "Select * from paginas where titulo = :rota";
     //$stmt = $conexao->query($query);
     $stmt = $conexao->prepare($query);
     $stmt->bindValue("rota", $rota);
     $stmt->execute();
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-        print_r($resultado);
-        //echo "Teste de consulta<br/>";
-    //echo $resultado[0]['id'] . " - ";
-    //echo $resultado[0]['titulo'] . " - ";
-    //echo $resultado[0]['conteudo'] . "<br/>";
+        //print_r($resultado);
+
 ?>
 
 <!DOCTYPE html>
@@ -70,19 +68,19 @@ require_once ('includes/bd.php');
         // ajusta os titulos e paginas e verifica se existe
         if (($pag == 'home') or ( $pag == "")) {
             $titulo = $rotas["home"];
-            $conteudo = $resultado[0]['conteudo'];
+            $conteudo = $resultado['conteudo'];
         } elseif ($pag == 'empresa') {
             $titulo = $rotas["empresa"];
-            $conteudo = $resultado[0]['conteudo'];
+            $conteudo = $resultado['conteudo'];
         } elseif ($pag == 'produtos') {
             $titulo = $rotas["produtos"];
-            $conteudo = $resultado[0]['conteudo'];
+            $conteudo = $resultado['conteudo'];
         } elseif ($pag == 'servicos') {
             $titulo = $rotas["servicos"];
-            $conteudo = $resultado[0]['conteudo'];
+            $conteudo = $resultado['conteudo'];
         } elseif ($pag == 'contato') {
             $titulo = $rotas["contato"];
-            $conteudo = $resultado[0]['conteudo'];
+            $conteudo = $resultado['conteudo'];
             //$conteudo = 'includes/contato.php';
         } else {
             $titulo = $rotas["404"];
@@ -129,6 +127,7 @@ require_once ('includes/bd.php');
                 </div>
             </section>
         </div>
+        <div class="clear"></div>
         <footer>
             <div class="container">
                 <div class="row clearfix">
