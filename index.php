@@ -5,7 +5,6 @@ $getUrl = trim($url['path'], '/');
 // --------
 date_default_timezone_set('America/Sao_Paulo');
 require_once ('includes/config.php');
-require_once ('includes/bd.php');
 // --------
 // Consulta
     if ($getUrl != "") {
