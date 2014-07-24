@@ -11,9 +11,10 @@ nav ul li {
 	width: 50%;
 	float: left;
 }
-.search {
-	width: 30%;
-	float: right;
+.busca {
+	height: 40px;
+	padding:10px 0 10px 0;
+	clear: both;
 }
 .esp {
 	padding:60px 0 60px 0;

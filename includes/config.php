@@ -12,7 +12,7 @@ try {
 	#$resultado = $conexao->exec($query); //exec rodar varios comandos de criação ou inserção
  	} 
 	catch(\PDOException $e) {
-            echo "Nao foi poss�vel estabelecer a conexao com o Bando de Dados<br/>" .$e->getMessage().": ".$e->getCode();
+            echo "Nao foi poss�vel estabelecer a conexao com o Bando de Dados<br/>" .$e->getMessage().": ".$e->getCode();
 	}
 
 // Rotas
@@ -22,5 +22,6 @@ $rotas = array(
 	"produtos" => "Produtos",
 	"servicos" => "Serviços",
 	"contato" => "Contato",
+	"busca" => "Resultado da busca",
 	"404" => "404 - P&aacute;gina não encontada!"
 );
