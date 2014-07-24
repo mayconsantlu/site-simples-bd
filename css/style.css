@@ -7,6 +7,14 @@ nav ul li {
 .erro {
     border-radius:5px;
 }
+.titulo {
+	width: 50%;
+	float: left;
+}
+.search {
+	width: 30%;
+	float: right;
+}
 .esp {
 	padding:60px 0 60px 0;
 }

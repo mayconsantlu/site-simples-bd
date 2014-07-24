@@ -13,7 +13,7 @@ require_once ('includes/config.php');
         $rota = 'home';
     }
     //echo $rota. "<br/>";
-    // seleciona as p�ginas com base na url passada
+    // seleciona as p�ginas com base na url passada
     $query = "Select * from paginas where titulo = :rota";
     //$stmt = $conexao->query($query);
     $stmt = $conexao->prepare($query);
@@ -38,8 +38,8 @@ require_once ('includes/config.php');
         <!--script src="js/less-1.3.3.min.js"></script-->
         <!--append â€˜#!watchâ€™ to the browser URL, then refresh the page. -->
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -50,9 +50,9 @@ require_once ('includes/config.php');
 
         <link rel="shortcut icon" href="img/favicon.png">
 
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/scripts.js"></script>
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/scripts.js"></script>
     </head>
 
     <body>
@@ -96,9 +96,10 @@ require_once ('includes/config.php');
                             <h2>
                                 SITE SIMPLES | PHP <small>code-education</small>
                             </h2>
-                        </div>
-                    </div>
-                </div>
+                         </div>
+                     </div>
+                 </div>
+          <!--/div-->
             </header>
             <section>
                 <div class="row clearfix">
