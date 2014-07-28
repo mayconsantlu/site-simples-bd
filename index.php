@@ -13,7 +13,7 @@ if ($getUrl != "") {
 	$rota = 'home';
 }
 //echo $rota. "<br/>";
-// seleciona as p�ginas com base na url passada
+// seleciona as paginas com base na url passada
 $query = "Select * from paginas where titulo = :rota";
 //$stmt = $conexao->query($query);
 $stmt = $conexao -> prepare($query);

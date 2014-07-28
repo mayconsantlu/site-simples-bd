@@ -3,7 +3,7 @@ if (isset($_POST['buscar']) && ($_POST['buscar'] != "") )
 	{
 		$busca 		= $_POST['buscar'];
 	}else {
-		echo "Desculpe o campo de pesquisa não pode ficar em branco!";
+		echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign"></span> Desculpe o campo de pesquisa não pode ficar em branco!</div>';
 	}
 
 echo $busca.'<br />';
