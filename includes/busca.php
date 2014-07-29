@@ -2,26 +2,35 @@
 if (isset($_POST['buscar']) && ($_POST['buscar'] != "") )
 	{
 		$busca 		= $_POST['buscar'];
-		echo '<div class="alert alert-info" role="alert">Buscando por: '.$busca.'</div>';
+		echo '<div class="breadcrumb"><span class="glyphicon glyphicon-search"></span> Buscando por: '.$busca.'</div>';
 		
-		#echo $busca.'<br />';
 
-		#$query = "Select * from paginas where titulo like '%$busca%' or conteudo like '%$busca%' order by desc;";
-		$query = "Select * from paginas where titulo like '%$busca%' or conteudo like '%$busca%';";
-		//$stmt = $conexao->query($query);
-		$stmt = $conexao -> prepare($query);
-		//$stmt -> bindValue("busca", $busca);
+		// Não funcionou com bindValue
+		$query = "Select * from paginas where titulo like '%$busca%' or conteudo like '%$busca%'";
+		$stmt = $conexao->prepare($query);
 		$stmt -> execute();
-		$resultado = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+		$resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		//print_r($resultado);
 		
-		foreach ($resultado as $result) {
-			echo $resultado[0]["titulo"];
-		}
 		
+		//Verifica o resultado;
+		//if (array_key_exists($resultado)){
+                if (array_key_exists('0', $resultado)){
+			foreach ($resultado as $result)
+			{
+				echo '<a href="'.$result["titulo"].'">'.$result["titulo"].'</a><br>';
+				//echo 'teste';
+				
+			}
+		}else {
+				echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign">
+						</span> Desculpe não foi encontrado nenhum resultado para sua busca!</div>';	
+					print_r($resultado);
+				}
 		
 	}else {
 		echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign"></span> Desculpe o campo de pesquisa não pode ficar em branco!</div>';
 	}
+
 
 
