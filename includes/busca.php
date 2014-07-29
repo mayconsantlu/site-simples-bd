@@ -24,8 +24,8 @@ if (isset($_POST['buscar']) && ($_POST['buscar'] != "") )
 			}
 		}else {
 				echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign">
-						</span> Desculpe não foi encontrado nenhum resultado para sua busca!</div>';	
-					print_r($resultado);
+						</span> Desculpe nao foi encontrado nenhum resultado para sua busca!</div>';	
+					//print_r($resultado);
 				}
 		
 	}else {
