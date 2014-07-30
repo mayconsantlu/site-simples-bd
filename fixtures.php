@@ -2,7 +2,7 @@
 
 require_once ('includes/config.php');
 
-// verifica se a tabela existe
+// verifica se a tabela existe e cria se não existir
 $conexao -> query("create table if not exists paginas
                     (   id integer unsigned auto_increment not null,
                         titulo varchar(150) not null,
@@ -11,16 +11,7 @@ $conexao -> query("create table if not exists paginas
 
 // Limpando a tabela;
 $conexao -> query("truncate table paginas;");
-
-// Pagina inicial
-/*$conexao -> query("insert into paginas (titulo, conteudo) values ('home', 'Conteudo da página inicial');");
-$conexao -> query("insert into paginas (titulo, conteudo) values ('empresa', 'Conteudo da página Empresa');");
-$conexao -> query("insert into paginas (titulo, conteudo) values ('produtos', 'Conteudo da página de Produtos');");
-$conexao -> query("insert into paginas (titulo, conteudo) values ('servicos', 'Conteudo da página de Serviços');");
-$conexao -> query("insert into paginas (titulo, conteudo) values ('contato', 'Conteudo da página de Contato');");
-*/
- 
- /* OBS - Não tentendi o por que, mas ao editar o código abaixo no Netbeans 
+ /* OBS - Não tentendi o por que, mas ao editar o código abaixo no Netbeans
   * ele da a mensagem de que a varial $stmt deve ser utilizada apenas uma vez
   * e ao executar ele não funciona, mudei para o Aptana e funcionou normalmente.
   */ 
