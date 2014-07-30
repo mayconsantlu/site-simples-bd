@@ -2,8 +2,7 @@
 
 require_once ('includes/config.php');
 
-//$conexao -> query("drop table if exists paginas;");
-
+// verifica se a tabela existe
 $conexao -> query("create table if not exists paginas
                     (   id integer unsigned auto_increment not null,
                         titulo varchar(150) not null,
