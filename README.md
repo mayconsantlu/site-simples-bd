@@ -16,3 +16,6 @@ Contato
 *Páginas salvas no banco de dados* 
 
 *Não queria funcionar a busca de jeito nenhum*..
+
+### Favor criar a base de dados de nome code
+> SQL: create database if not exists code;
