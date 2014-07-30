@@ -2,6 +2,14 @@
 
 require_once ('includes/config.php');
 
+//$conexao -> query("drop table if exists paginas;");
+
+$conexao -> query("create table if not exists paginas
+                    (   id integer unsigned auto_increment not null,
+                        titulo varchar(150) not null,
+                        conteudo text not null,
+                        primary key (id));");
+
 // Limpando a tabela;
 $conexao -> query("truncate table paginas;");
 
@@ -41,4 +49,3 @@ $conexao -> query("insert into paginas (titulo, conteudo) values ('contato', 'Co
  $sql5 = "insert into paginas (titulo, conteudo) values ('contato', 'Conteudo da página de Contato')";
  $stmt = $conexao->prepare($sql5);
  $stmt->execute();
- 
